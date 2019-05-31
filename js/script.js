@@ -1,38 +1,5 @@
 "use strict";
 
-// const images = document.querySelectorAll(".image-to-show");
-// const stop = document.getElementById("stop");
-// const start = document.getElementById("start");
-
-// start.style.display = "none";
-// console.log(images);
-
-// images.forEach(item => {
-//   item.style.display = "none";
-// });
-// let currentSlide = 0;
-// images[currentSlide].style.display = "block";
-
-// const clearCarouselInterval = () => {
-//   clearInterval(carouselInterval);
-//   carouselInterval = setInterval(nextCarousel, 1000);
-//   start.style.display = "none";
-// };
-
-// const nextCarousel = () => {
-//   images[currentSlide].style.display = "none";
-//   currentSlide = (currentSlide + 1) % images.length;
-//   images[currentSlide].style.display = "block";
-// };
-
-// let carouselInterval = setInterval(nextCarousel, 1000);
-
-// stop.addEventListener("click", () => {
-//   clearInterval(carouselInterval);
-//   start.style.display = "";
-// });
-
-// start.addEventListener("click", clearCarouselInterval);
 
 function Slider(imgContainerClass) {
   this.images = document.querySelectorAll(imgContainerClass);
@@ -49,7 +16,7 @@ function Slider(imgContainerClass) {
 
   this.clearCarouselInterval = () => {
     clearInterval(this.carouselInterval);
-    this.carouselInterval = setInterval(this.nextCarousel, 1000);
+    this.carouselInterval = setInterval(this.nextCarousel, 2000);
     this.start.style.display = "none";
   };
 
@@ -59,7 +26,7 @@ function Slider(imgContainerClass) {
     this.images[this.currentSlide].style.display = "block";
   };
 
-  this.carouselInterval = setInterval(this.nextCarousel, 1000);
+  this.carouselInterval = setInterval(this.nextCarousel, 2000);
 
   this.stop.addEventListener("click", () => {
     clearInterval(this.carouselInterval);
@@ -69,6 +36,4 @@ function Slider(imgContainerClass) {
   this.start.addEventListener("click", this.clearCarouselInterval);
 }
 
-const xxx = new Slider(".image-to-show");
-
-console.log(xxx);
+const slider = new Slider(".image-to-show");
